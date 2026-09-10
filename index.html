@@ -1,329 +1,322 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portal Dokumen & Link Informasi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --accent-color: #38bdf8;
-            --accent-hover: #0284c7;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-        }
+      :root {
+        --bg-color: #0f172a;
+        --card-bg: rgba(30, 41, 59, 0.7);
+        --card-border: rgba(255, 255, 255, 0.1);
+        --accent-color: #38bdf8;
+        --accent-hover: #0284c7;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+      }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
 
-        body {
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
-            min-height: 100vh;
-            color: var(--text-primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+      body {
+        background-color: var(--bg-color);
+        background-image: radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
+        min-height: 100vh;
+        color: var(--text-primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
 
-        .wrapper {
-            max-width: 900px;
-            width: 100%;
-        }
+      .wrapper {
+        max-width: 900px;
+        width: 100%;
+      }
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
 
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
+      header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+      }
 
-        header p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
+      header p {
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(12px);
-            border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        backdrop-filter: blur(12px);
+        border-radius: 16px;
+        padding: 24px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.2);
-        }
+      .card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(56, 189, 248, 0.4);
+        box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.2);
+      }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
 
-        .icon-box {
-            width: 44px;
-            height: 44px;
-            background: rgba(56, 189, 248, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
+      .icon-box {
+        width: 44px;
+        height: 44px;
+        background: rgba(56, 189, 248, 0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
 
-        .lock-badge {
-            font-size: 0.8rem;
-            background: rgba(241, 245, 249, 0.1);
-            padding: 4px 10px;
-            border-radius: 20px;
-            color: var(--text-secondary);
-        }
+      .lock-badge {
+        font-size: 0.8rem;
+        background: rgba(241, 245, 249, 0.1);
+        padding: 4px 10px;
+        border-radius: 20px;
+        color: var(--text-secondary);
+      }
 
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
+      .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
 
-        .card-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
+      .card-desc {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
 
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background: var(--accent-color);
-            color: #0f172a;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
+      .btn {
+        width: 100%;
+        padding: 12px;
+        background: var(--accent-color);
+        color: #0f172a;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
 
-        .btn:hover {
-            background: var(--accent-hover);
-            color: #ffffff;
-        }
+      .btn:hover {
+        background: var(--accent-hover);
+        color: #ffffff;
+      }
 
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(8px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 100;
-        }
+      /* Modal Styles */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(8px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 100;
+      }
 
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
+      .modal-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
 
-        .modal {
-            background: #1e293b;
-            border: 1px solid var(--card-border);
-            padding: 30px;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 380px;
-            text-align: center;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-        }
+      .modal {
+        background: #1e293b;
+        border: 1px solid var(--card-border);
+        padding: 30px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 380px;
+        text-align: center;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      }
 
-        .modal h3 {
-            margin-bottom: 8px;
-            font-size: 1.3rem;
-        }
+      .modal h3 {
+        margin-bottom: 8px;
+        font-size: 1.3rem;
+      }
 
-        .modal p {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            margin-bottom: 20px;
-        }
+      .modal p {
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        margin-bottom: 20px;
+      }
 
-        .input-group {
-            margin-bottom: 20px;
-        }
+      .input-group {
+        margin-bottom: 20px;
+      }
 
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid var(--card-border);
-            background: #0f172a;
-            color: #fff;
-            text-align: center;
-            font-size: 1rem;
-            outline: none;
-        }
+      .input-group input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid var(--card-border);
+        background: #0f172a;
+        color: #fff;
+        text-align: center;
+        font-size: 1rem;
+        outline: none;
+      }
 
-        .input-group input:focus {
-            border-color: var(--accent-color);
-        }
+      .input-group input:focus {
+        border-color: var(--accent-color);
+      }
 
-        .modal-btns {
-            display: flex;
-            gap: 10px;
-        }
+      .modal-btns {
+        display: flex;
+        gap: 10px;
+      }
 
-        .btn-cancel {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-secondary);
-        }
+      .btn-cancel {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-secondary);
+      }
 
-        .btn-cancel:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-        }
+      .btn-cancel:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
 
-        .error-msg {
-            color: #ef4444;
-            font-size: 0.8rem;
-            margin-top: 8px;
-            display: none;
-        }
+      .error-msg {
+        color: #ef4444;
+        font-size: 0.8rem;
+        margin-top: 8px;
+        display: none;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="wrapper">
-        <header>
-            <h1>Sharing Portal</h1>
-            <p>Akses berkas dan dokumen proyek terlindungi</p>
-        </header>
+      <header>
+        <h1>Sharing Portal</h1>
+        <p>Akses berkas dan dokumen proyek terlindungi</p>
+      </header>
 
-        <div class="grid-container">
-            <!-- Card 1 -->
-            <div class="card">
-                <div>
-                    <div class="card-header">
-                        <div class="icon-box">📁</div>
-                        <span class="lock-badge">🔒 Terkunci</span>
-                    </div>
-                    <div class="card-title">Tugas-Tugas</div>
-                    <div class="card-desc">Kumpulan daftar tugas dan progres mingguan proyek.</div>
-                </div>
-                <button class="btn" onclick="openModal('12345', 'https://drive.google.com')">
-                    Buka Akses ↗
-                </button>
+      <div class="grid-container">
+        <!-- Card 1 -->
+        <div class="card">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">📁</div>
+              <span class="lock-badge">🔒 Terkunci</span>
             </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <div>
-                    <div class="card-header">
-                        <div class="icon-box">📚</div>
-                        <span class="lock-badge">🔒 Terkunci</span>
-                    </div>
-                    <div class="card-title">Materi B3</div>
-                    <div class="card-desc">Modul pelatihan, SOP, serta dokumen acuan sistem.</div>
-                </div>
-                <button class="btn" onclick="openModal('b3pass', 'https://drive.google.com')">
-                    Buka Akses ↗
-                </button>
-            </div>
+            <div class="card-title">Tugas-Tugas</div>
+            <div class="card-desc">Kumpulan daftar tugas dan progres mingguan proyek.</div>
+          </div>
+          <button class="btn" onclick="openModal('12345', 'https://drive.google.com')">Buka Akses ↗</button>
         </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">📚</div>
+              <span class="lock-badge">🔒 Terkunci</span>
+            </div>
+            <div class="card-title">Materi B3</div>
+            <div class="card-desc">Modul pelatihan, SOP, serta dokumen acuan sistem.</div>
+          </div>
+          <button class="btn" onclick="openModal('b3pass', 'https://drive.google.com/drive/folders/18TtGwySHAPnZvQR-5ZrRpgGLn5PaNkgi')">Buka Akses ↗</button>
+        </div>
+      </div>
     </div>
 
     <!-- Modal Pop-up Password -->
     <div class="modal-overlay" id="modalOverlay">
-        <div class="modal">
-            <h3>Ketik Password</h3>
-            <p>Masukkan kata sandi untuk melanjutkan ke link tujuan.</p>
-            <div class="input-group">
-                <input type="password" id="passInput" placeholder="••••••••" onkeyup="checkEnter(event)">
-                <div class="error-msg" id="errorMsg">Password salah, silakan coba lagi!</div>
-            </div>
-            <div class="modal-btns">
-                <button class="btn btn-cancel" onclick="closeModal()">Batal</button>
-                <button class="btn" onclick="submitPass()">Masuk</button>
-            </div>
+      <div class="modal">
+        <h3>Ketik Password</h3>
+        <p>Masukkan kata sandi untuk melanjutkan ke link tujuan.</p>
+        <div class="input-group">
+          <input type="password" id="passInput" placeholder="••••••••" onkeyup="checkEnter(event)" />
+          <div class="error-msg" id="errorMsg">Password salah, silakan coba lagi!</div>
         </div>
+        <div class="modal-btns">
+          <button class="btn btn-cancel" onclick="closeModal()">Batal</button>
+          <button class="btn" onclick="submitPass()">Masuk</button>
+        </div>
+      </div>
     </div>
 
     <script>
-        let currentPass = '';
-        let currentUrl = '';
+      let currentPass = "";
+      let currentUrl = "";
 
-        function openModal(correctPass, targetUrl) {
-            currentPass = correctPass;
-            currentUrl = targetUrl;
-            document.getElementById('modalOverlay').classList.add('active');
-            document.getElementById('passInput').value = '';
-            document.getElementById('errorMsg').style.display = 'none';
-            setTimeout(() => document.getElementById('passInput').focus(), 100);
-        }
+      function openModal(correctPass, targetUrl) {
+        currentPass = correctPass;
+        currentUrl = targetUrl;
+        document.getElementById("modalOverlay").classList.add("active");
+        document.getElementById("passInput").value = "";
+        document.getElementById("errorMsg").style.display = "none";
+        setTimeout(() => document.getElementById("passInput").focus(), 100);
+      }
 
-        function closeModal() {
-            document.getElementById('modalOverlay').classList.remove('active');
-        }
+      function closeModal() {
+        document.getElementById("modalOverlay").classList.remove("active");
+      }
 
-        function submitPass() {
-            const userPass = document.getElementById('passInput').value;
-            if (userPass === currentPass) {
-                window.open(currentUrl, '_blank');
-                closeModal();
-            } else {
-                document.getElementById('errorMsg').style.display = 'block';
-            }
+      function submitPass() {
+        const userPass = document.getElementById("passInput").value;
+        if (userPass === currentPass) {
+          window.open(currentUrl, "_blank");
+          closeModal();
+        } else {
+          document.getElementById("errorMsg").style.display = "block";
         }
+      }
 
-        function checkEnter(event) {
-            if (event.key === "Enter") {
-                submitPass();
-            }
+      function checkEnter(event) {
+        if (event.key === "Enter") {
+          submitPass();
         }
+      }
     </script>
-</body>
+  </body>
 </html>
