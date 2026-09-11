@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portal Dokumen & Link Informasi</title>
+    <title>Portal Dokumen & Link Informasi Seputar Anak Mang Tio!!!</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
@@ -101,6 +101,13 @@
         align-items: center;
         justify-content: center;
         font-size: 1.2rem;
+      }
+
+      /* TAMBAHAN BARU: Mengatur ukuran icon gambar agar seragam dengan emoji */
+      .icon-box img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
       }
 
       .lock-badge {
@@ -246,19 +253,21 @@
           <div>
             <div class="card-header">
               <div class="icon-box">📁</div>
-              <span class="lock-badge">🔒 Terkunci</span>
+              <span class="lock-badge"> Terkunci</span>
             </div>
             <div class="card-title">Tugas-Tugas</div>
             <div class="card-desc">Kumpulan daftar tugas dan progres mingguan proyek.</div>
           </div>
-          <button class="btn" onclick="openModal('12345', 'https://drive.google.com')">Buka Akses ↗</button>
+          <button class="btn" onclick="openModal('12345', 'https://drive.google.com')">Buka Akses</button>
         </div>
 
         <!-- Card 2 -->
         <div class="card">
           <div>
             <div class="card-header">
-              <div class="icon-box">📚</div>
+              <div class="icon-box">
+                <img src="https://img.icons8.com/?size=100&id=67360&format=png&color=000000" alt="Icon" />
+              </div>
               <span class="lock-badge">🔒 Terkunci</span>
             </div>
             <div class="card-title">Materi B3</div>
@@ -266,8 +275,40 @@
           </div>
           <button class="btn" onclick="openModal('b3pass', 'https://drive.google.com/drive/folders/18TtGwySHAPnZvQR-5ZrRpgGLn5PaNkgi?usp=sharing')">Buka Akses ↗</button>
         </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">
+                <img src="https://img.icons8.com/?size=100&id=hxGDLaEDjNzW&format=png&color=000000" alt="Icon" />
+              </div>
+              <span class="lock-badge">🔒 Terkunci</span>
+            </div>
+            <div class="card-title">Laporan Uang KAS</div>
+            <div class="card-desc">Arsip dokumen uang Kas B3.</div>
+          </div>
+          <button class="btn" onclick="openModal('b3pass', 'https://docs.google.com/spreadsheets/d/1g9T_zkHH-bnqyW6Jogum3P87sVfpvKlK/edit?usp=sharing&ouid=115437391882849384725&rtpof=true&sd=true')">Buka Akses ↗</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div>
+            <div class="card-header">
+              <div class="icon-box">
+                <img src="https://img.icons8.com/?size=100&id=LFB02ASKjxl3&format=png&color=000000" alt="Icon" />
+              </div>
+              <span class="lock-badge">🔒 Terkunci</span>
+            </div>
+            <div class="card-title">Dokumen Tugas</div>
+            <div class="card-desc">Arsip dokumen sementara yang akan di print.</div>
+          </div>
+          <button class="btn" onclick="openModal('b3pass', 'https://drive.google.com/drive/folders/1PAlb-DiJnIQtAgZY97SDh9U6FKvAt48u?usp=sharing')">Buka Akses ↗</button>
+        </div>
       </div>
+      <!-- Penutup grid-container -->
     </div>
+    <!-- Penutup wrapper -->
 
     <!-- Modal Pop-up Password -->
     <div class="modal-overlay" id="modalOverlay">
